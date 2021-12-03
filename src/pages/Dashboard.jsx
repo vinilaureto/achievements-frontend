@@ -1,5 +1,13 @@
+import Header from '../components/Header'
+import Lists from '../components/ListsDisplay'
+
 export default function Dashboard() {
     return (
-        <h2>Dashboard</h2>
+        <>
+        <Header />
+        <main className="top-center">
+          <Lists />
+        </main>
+      </>
     )
 }
