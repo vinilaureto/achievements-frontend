@@ -1,0 +1,42 @@
+.lists {
+  width: 100%;
+
+  .lists-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #005E72;
+    }
+  }
+}
+
+.list-item {
+  padding: 12px 14px;
+  background-color: #fefdfa;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+
+  .name {
+    color: #005E72;
+    font-size: 20px;
+  }
+
+  .completition {
+    font-size: 20px;
+    color: #11A7B6;
+  }
+
+  &:hover {
+    outline: 1px solid #005E72;
+  }
+}
+
