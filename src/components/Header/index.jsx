@@ -1,9 +1,12 @@
 import "./style.scss";
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
     <header className="header">
+      <Link to="/dashboard" className="link">
       <h1 className="title">Kista</h1>
+      </Link>
       <div className="controls">
         <span className="email">vinilaureto@gmail.com</span>
         <span className="separator"></span>
