@@ -16,7 +16,7 @@ export default function SignupForm() {
       email,
       password
     })
-    if (response.status == 200) {
+    if (response.status === 200) {
       alert("Usuário criado com sucesso")
       navigate('/login')
     } 

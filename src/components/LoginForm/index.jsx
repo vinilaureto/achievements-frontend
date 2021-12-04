@@ -14,7 +14,7 @@ export default function LoginForm() {
       email,
       password
     })
-    if (response.status == 200) {
+    if (response.status === 200) {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('userId', response.data.userId)
       localStorage.setItem('email', email)

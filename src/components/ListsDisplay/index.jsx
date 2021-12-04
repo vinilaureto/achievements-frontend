@@ -1,5 +1,4 @@
 import "./style.scss";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,11 +16,11 @@ export default function ListsDisplay() {
       },
     });
     setLists(response.data.lists);
-  });
+  },[token, userId]);
 
   useEffect(() => {
     loadLists();
-  }, []);
+  }, [loadLists]);
 
   async function handleNewList() {
     let response = await axios.post(

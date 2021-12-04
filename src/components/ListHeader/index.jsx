@@ -97,9 +97,9 @@ export default function ListHeader({ achievements }) {
 
   function getPercentage() {
 
-    if (getAchievementsComplete(achievements) == 0) {
+    if (getAchievementsComplete(achievements) === 0) {
       return "0%";
-    } else if (getAchievementsComplete(achievements) == achievements.length) {
+    } else if (getAchievementsComplete(achievements) === achievements.length) {
       return "100%";
     } else {
       let percent =
@@ -127,7 +127,7 @@ export default function ListHeader({ achievements }) {
           <div
             style={{ width: getPercentage() }}
             className={
-              "progress-marker " + (getPercentage() == "100%" ? "complete" : "")
+              "progress-marker " + (getPercentage() === "100%" ? "complete" : "")
             }
           ></div>
         </div>
