@@ -24,15 +24,13 @@
   display: flex;
   justify-content: space-between;
   text-decoration: none;
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
 
   .name {
     color: #005E72;
     font-size: 20px;
-  }
-
-  .completition {
-    font-size: 20px;
-    color: #11A7B6;
   }
 
   &:hover {

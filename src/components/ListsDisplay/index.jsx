@@ -1,31 +1,73 @@
-import './style.scss';
-import { Link } from 'react-router-dom'
+import "./style.scss";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ListsDisplay() {
+  const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
+  const [lists, setLists] = useState([]);
+  const navigate = useNavigate();
 
-    const listItemProp = {
-        name: "Nome da lista",
-        complete: 15,
-        total: 25,
-        link: 1 // id
+  const loadLists = useCallback(async () => {
+    let response = await axios.get(`http://localhost:5000/list/${userId}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    setLists(response.data.lists);
+  });
+
+  useEffect(() => {
+    loadLists();
+  }, []);
+
+  async function handleNewList() {
+    let response = await axios.post(
+      "http://localhost:5000/list/",
+      {
+        title: "Nova lista",
+        owner: userId,
+      },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+    if (response.status === 200) {
+      redirectToList(response.data.id, response.data.title)
+    } else {
+      alert("Aconteceu algo de errado");
     }
+  }
 
-    function ListItem({name, complete, total, link}) {
-        return (
-            <Link className="list-item" to={`/lista/${link}`}>
-            <span className="name">{name}</span>
-            <span className="completition">{complete}/{total} conquistas realizadas</span>
-        </Link>
-        )
-    }
+  function redirectToList(id, title) {
+    localStorage.setItem('listId', id)
+    localStorage.setItem('listTitle', title)
+    navigate(`/lista/${id}`);
+  }
 
+  function ListItem({ id, name }) {
     return (
-        <section className="lists container">
-            <div className="lists-header">
-                <h2 className="title">Minhas listas de conquistas:</h2>
-                <button className="button-primary">nova lista</button>
-            </div>
-            <ListItem {...listItemProp}/>
-        </section>
-    )
+      <button className="list-item" onClick={() => redirectToList(id, name)}>
+        <span className="name">{name}</span>
+      </button>
+    );
+  }
+
+  return (
+    <section className="lists container">
+      <div className="lists-header">
+        <h2 className="title">Minhas listas de conquistas:</h2>
+        <button className="button-primary" onClick={handleNewList}>
+          nova lista
+        </button>
+      </div>
+      {lists.map((list, key) => (
+        <ListItem name={list.title} key={key} id={list.id} />
+      ))}
+    </section>
+  );
 }
