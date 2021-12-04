@@ -10,11 +10,32 @@
       display: flex;
       align-items: center;
 
+      .title-wrapper {
+        display: flex;
+      }
+
       .title {
         color: #005e72;
         font-size: 25px;
         font-weight: 700;
         margin-right: 15px;
+
+        &.hide {
+          display: none;
+        }
+      }
+
+      .title-editor {
+        color: #005e72;
+        font-size: 23px;
+        font-weight: 700;
+        margin-right: 15px;
+        border: 1px solid #005e72;
+        transform: translateY(-3px);
+
+        &.hide {
+          display: none;
+        }
       }
 
       .actions {
@@ -64,6 +85,11 @@
       display: block;
       background-color: #005e72;
       height: 30px;
+      transition: .3s ease-in;
+
+      &.complete {
+        background-color: #32a545;
+      }
     }
   }
 }
