@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Lists from '../components/ListsDisplay'
 import CheckAuth from '../lib/Auth'
@@ -10,6 +11,7 @@ export default function Dashboard() {
         <main className="top-center">
           <Lists />
         </main>
+        <Footer />
       </>
     )
 }

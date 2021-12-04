@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SignupForm from "../components/SignupForm";
 
@@ -8,6 +9,7 @@ export default function Signup() {
       <main className="center">
         <SignupForm />
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import LoginForm from "../components/LoginForm";
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="center">
         <LoginForm />
       </main>
+      <Footer />
     </>
   );
 }
