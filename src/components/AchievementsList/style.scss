@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 36px;
   row-gap: 36px;
+  margin-bottom: 90px;
 }
 
 .achievement-card {
@@ -15,6 +16,15 @@
   box-sizing: border-box;
   width: 232px;
   padding: 40px 14px 14px;
+  opacity: .4;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.done {
+    opacity: 1;
+  }
 
   .actions {
     position: absolute;
@@ -41,6 +51,9 @@
     border-radius: 100%;
     background: #005e72;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .name {
