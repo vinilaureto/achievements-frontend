@@ -9,6 +9,7 @@ export default function ListsDisplay() {
   const [lists, setLists] = useState([]);
   const navigate = useNavigate();
 
+  // eslint-disable-next-line 
   const loadLists = useCallback(async () => {
     let response = await axios.get(`http://localhost:5000/list/${userId}`, {
       headers: {
@@ -16,11 +17,12 @@ export default function ListsDisplay() {
       },
     });
     setLists(response.data.lists);
-  },[token, userId]);
+  });
 
   useEffect(() => {
     loadLists();
-  }, [loadLists]);
+    // eslint-disable-next-line 
+  }, []);
 
   async function handleNewList() {
     let response = await axios.post(

@@ -10,13 +10,15 @@ export default function List() {
   const { achievements, updateAchievementsList } = useContext(Context)
   const listId = localStorage.getItem('listId')
 
+  // eslint-disable-next-line 
   const loadAchievements = useCallback(async () => {
     updateAchievementsList(listId)
-  }, [listId, updateAchievementsList]);
+  });
 
   useEffect(() => {
     loadAchievements();
-  }, [loadAchievements]);
+    // eslint-disable-next-line 
+  }, []);
 
   return (
     <>
