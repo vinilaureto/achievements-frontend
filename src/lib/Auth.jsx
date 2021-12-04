@@ -5,6 +5,7 @@ export default function CheckAuth() {
     if (token == null || userId == null) {
         localStorage.removeItem('token')
         localStorage.removeItem('userId')
+        localStorage.removeItem('email')
         window.location.href = "/login"
     }
     return <></>
