@@ -143,14 +143,14 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 69px);
+  min-height: calc(100vh - 105px);
 }
 
 .top-center {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 69px);
+  min-height: calc(100vh - 105px);
   padding-top: 61px;
   box-sizing: border-box;
 }
@@ -192,5 +192,7 @@ html {
 
 
 .top-padding {
+  min-height: calc(100vh - 105px);
+  box-sizing: border-box;
   padding-top: 61px;
 }
