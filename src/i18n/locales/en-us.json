@@ -1,0 +1,29 @@
+{
+  "translation": {
+    "nova conquista": "new achievement",
+    "nova lista": "new list",
+    "Minhas listas de conquistas": "My achievements lists",
+    "Sair": "Logout",
+    "conquistas realizadas": "achievements done",
+    "Título": "Title",
+    "Descrição": "Description",
+    "Icone": "Icon",
+    "cancelar": "cancel",
+    "save": "save",
+    "Escolher": "Choose",
+    "concluir": "done",
+    "Editar conquista": "Edit achievement",
+    "Apagar conquista": "Remove achievement",
+    "Editar lista": "Edit list",
+    "Apagar lista": "Remove list",
+    "Entrar": "Login",
+    "entrar": "login",
+    "Senha": "Password",
+    "Ainda não tem conta?": "Still don't have an account?",
+    "criar uma conta": "create an account",
+    "Cadastro": "Signup",
+    "Cadastrar": "Signup",
+    "Nome completo": "Full name",
+    "Já tem uma conta?": "Already have an account?"
+  }
+}

@@ -2,8 +2,10 @@ import "./style.scss";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 export default function ListsDisplay() {
+  const { t } = useTranslation()
   const userId = localStorage.getItem("userId");
   const token = localStorage.getItem("token");
   const [lists, setLists] = useState([]);
@@ -61,9 +63,9 @@ export default function ListsDisplay() {
   return (
     <section className="lists container">
       <div className="lists-header">
-        <h2 className="title">Minhas listas de conquistas:</h2>
+        <h2 className="title">{t('Minhas listas de conquistas')}:</h2>
         <button className="button-primary" onClick={handleNewList}>
-          nova lista
+          {t('nova lista')}
         </button>
       </div>
       {lists.map((list, key) => (

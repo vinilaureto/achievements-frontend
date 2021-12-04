@@ -1,0 +1,29 @@
+{
+  "translation": {
+    "nova conquista": "nuevo logro",
+    "nova lista": "nueva lista",
+    "Minhas listas de conquistas": "Mis listas de logros",
+    "Sair": "Cerrar sesión",
+    "conquistas realizadas": "achievements done",
+    "Título": "Título",
+    "Descrição": "Descripción",
+    "Icone": "Icono",
+    "cancelar": "cancelar",
+    "save": "guardar",
+    "Escolher": "Elegir",
+    "concluir": "listo",
+    "Editar conquista": "Editar logro",
+    "Apagar conquista": "Eliminar logro",
+    "Editar lista": "Editar lista",
+    "Apagar lista": "Eliminar lista",
+    "Entrar": "Iniciar sesión",
+    "entrar": "login",
+    "Senha": "Contraseña",
+    "Ainda não tem conta?": "¿Aún no tienes una cuenta?",
+    "criar uma conta": "crear una cuenta",
+    "Cadastro": "Registro",
+    "Cadastrar": "Registrarse",
+    "Nome completo": "Nombre completo",
+    "Já tem uma conta?": "¿Ya tienes una cuenta?"
+  }
+}

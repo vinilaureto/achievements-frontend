@@ -5,8 +5,10 @@ import { ReactComponent as Star } from "./star.svg";
 import { useContext } from "react";
 import { Context } from "../../lib/Context";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 export default function AchievementsList({ achievements }) {
+  const { t } = useTranslation()
   const listId = localStorage.getItem("listId");
   const token = localStorage.getItem("token");
   const { showEditor, changeShowEditor, updateAchievementsList } =
@@ -51,9 +53,9 @@ export default function AchievementsList({ achievements }) {
       <div className={"achievement-card " + (done ? "done" : "")}>
         <div className="actions">
           <button>
-            <Edit title="Editar conquista" onClick={handleEditAchievement} />
+            <Edit title={t("Editar conquista")} onClick={handleEditAchievement} />
           </button>
-          <button title="Apagar conquista" onClick={handleDeleteAchievement}>
+          <button title={t("Apagar conquista")} onClick={handleDeleteAchievement}>
             <Delete />
           </button>
         </div>
@@ -64,7 +66,7 @@ export default function AchievementsList({ achievements }) {
           className="button-primary check-button"
           onClick={handleStatusAchievement}
         >
-          {done ? "cancelar" : "concluir"}
+          {done ? t("cancelar") : t("concluir")}
         </button>
       </div>
     );
@@ -125,7 +127,7 @@ export default function AchievementsList({ achievements }) {
         <div className="achievement-modal">
           <form onSubmit={(e) => handleSaveButton(e)}>
             <label className="label" htmlFor="title">
-              Título
+              {t("Título")}
             </label>
             <input
               className="input"
@@ -135,7 +137,7 @@ export default function AchievementsList({ achievements }) {
               defaultValue={currentTitle}
             />
             <label className="label" htmlFor="description">
-              Descrição
+              {t("Descrição")}
             </label>
             <textarea
               className="input textarea"
@@ -146,10 +148,10 @@ export default function AchievementsList({ achievements }) {
               defaultValue={currentDescription}
             ></textarea>
             <label className="label" htmlFor="icon">
-              Icone
+              {t("Icone")}
             </label>
             <select className="input" id="icon" disabled>
-              <option defaultValue>Escolher</option>
+              <option defaultValue>{t("Escolher")}</option>
               <option value="balao">Balão</option>
             </select>
             <div className="buttons">
@@ -160,10 +162,10 @@ export default function AchievementsList({ achievements }) {
                   handleCancelButton();
                 }}
               >
-                cancelar
+                {t("cancelar")}
               </button>
               <button className="button-primary" type="submit">
-                salvar
+                {t("salvar")}
               </button>
             </div>
           </form>

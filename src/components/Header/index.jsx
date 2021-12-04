@@ -1,7 +1,9 @@
 import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 export default function Header() {
+  const { t } = useTranslation()
   const navigate = useNavigate();
   const email = localStorage.getItem("email");
 
@@ -20,11 +22,11 @@ export default function Header() {
       <div className="controls">
         <span className="email">{email}</span>
 
-        {localStorage.getItem(email) ? (
+        {localStorage.getItem('email') ? (
           <>
             <span className="separator"></span>
             <button className="logoff" onClick={handleLogoff}>
-              Sair
+              {t('Sair')}
             </button>
           </>
         ) : (

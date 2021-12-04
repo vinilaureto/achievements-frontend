@@ -5,8 +5,10 @@ import { useState, useContext } from "react";
 import { Context } from "../../lib/Context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function ListHeader({ achievements }) {
+  const { t } = useTranslation();
   const [listTitle, setListTitle] = useState(localStorage.getItem("listTitle"));
   const listId = localStorage.getItem("listId");
   const userId = localStorage.getItem("userId");
@@ -71,9 +73,9 @@ export default function ListHeader({ achievements }) {
         </div>
         <div className="actions">
           <button onClick={handleEdit}>
-            <Edit title="Editar lista" />
+            <Edit title={t("Editar lista")} />
           </button>
-          <button title="Apagar lista" onClick={handleDelete}>
+          <button title={t("Apagar lista")} onClick={handleDelete}>
             <Delete />
           </button>
         </div>
@@ -96,7 +98,6 @@ export default function ListHeader({ achievements }) {
   }
 
   function getPercentage() {
-
     if (getAchievementsComplete(achievements) === 0) {
       return "0%";
     } else if (getAchievementsComplete(achievements) === achievements.length) {
@@ -115,19 +116,20 @@ export default function ListHeader({ achievements }) {
           <ListTitle />
         </div>
         <button className="button-primary" onClick={handleNewAchievement}>
-          Nova consquista
+          {t("nova conquista")}
         </button>
       </div>
       <div className="progress">
         <span className="count">
           {getAchievementsComplete(achievements)}/{achievements.length}{" "}
-          conquistas realizadas
+          {t("conquistas realizadas")}
         </span>
         <div className="progress-wrapper">
           <div
             style={{ width: getPercentage() }}
             className={
-              "progress-marker " + (getPercentage() === "100%" ? "complete" : "")
+              "progress-marker " +
+              (getPercentage() === "100%" ? "complete" : "")
             }
           ></div>
         </div>
